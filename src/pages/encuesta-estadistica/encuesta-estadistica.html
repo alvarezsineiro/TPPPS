@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar class="navbarcolor">
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-image" padding style="text-align: center;">
+    <div class="form_wrapper animated bounceInLeft bottom" [hidden]="contestando" >
+        <div [hidden]="encuestasPendientes" class="bottom">
+            <h3>Tiene las siguientes encuestas disponibles</h3>
+            <div *ngFor="let item of encues">
+                <div *ngIf="item != ''">
+                    <button (click)="responder(item)">{{item}}</button>
+                </div>
+            </div>
+        </div>
+        <div [hidden]="!encuestasPendientes" class="bottom">
+            <h3>No tiene encuestas pendientes</h3>
+            <label>Todas las encuestas han sido contestadas</label>
+            <br>
+        </div>
+
+    </div>
+
+    <!--<div class="form_wrapper animated bounceInRight" [hidden]="!contestando">
+
+        <br>
+        <div [hidden]="P">
+            <div *ngFor="let preg of preguntas">
+                <label>{{preg.question}}</label>
+                <label>{{preg.indice}}</label>
+                <input type="text" [(ngModel)]="respuestas[preg.indice]">
+            </div>
+
+        </div>
+      <div [hidden]="U">
+            <div *ngFor="let preg of preguntas">
+                <label>{{preg.question}}</label>
+                <input type="radio" [(ngModel)]="encuesta.respuesta[preg.indice]" name="rad">
+            </div>
+        </div>
+        <div [hidden]="M">
+            <div *ngFor="let preg of preguntas">
+                <label>{{preg.question}}</label>
+                <div *ngFor="let i of opciones">
+                    <label>{{i}}</label>
+                    <input type="checkbox" [(ngModel)]="encuesta.respuesta[preg.indice]" name="cheki" value="{{i}}">
+                    <label>{{ i }}</label>
+                </div>
+
+            </div>
+        </div>-->
+    <!-- <div *ngIf="alumno.tipo == 'P'">
+
+        </div>
+        <div *ngIf="alumno.tipo == 'P'">
+            <label>{{alumno.quest}}</label>
+           <input type="text" placeholder="Ingrese respuesta" [(ngModel)]="respuestas[item.indice]" />
+        </div>
+
+        <div *ngIf="alumno.tipo == 'U'">
+            <label>{{alumno.quest}}</label>
+
+            <div *ngFor="let i of alumno.opciones">
+                <label>{{alumno.quest}}</label>
+                <input [(ngModel)]="respuestas[alumno.indice]" value="{{i}}" type="radio" name="i">
+                <label>{{ i }}</label>
+            </div>
+        </div>
+        <div *ngIf="alumno.tipo == 'M'">
+            <label>{{alumno.question}}</label>
+            <input color="encuestas" style="margin-left: 5%" [(ngModel)]="respuestas[alumno.indice]" type="checkbox" name="check" />
+            
+        </div>-->
+
+
+</ion-content>

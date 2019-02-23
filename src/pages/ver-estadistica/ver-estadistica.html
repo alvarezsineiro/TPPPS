@@ -1,0 +1,59 @@
+<!--
+  Generated template for the EstadisticaEncuestaPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar class="navbarcolor">
+      <ion-title>{{nombreEnc}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="bg-image" padding>
+    
+   
+     <!--ion-item style="text-align: center;">
+      <h2><label>Estadisticas de: <br> "{{nombreEnc}}"</label></h2>
+      <h4><label>Pregunta:<br> "{{pregunta}}"</label></h4>
+     </ion-item>
+     <br>
+    <ion-list *ngIf="tipo == 'P'">
+          <ion-item *ngFor="let i of ListaRespuestas"> 
+          <label> {{i.respuesta}} {{i.cantidad}} </label>>
+          <label> {{i}}</label>
+          </ion-item>
+    </ion-list>
+   <canvas style="width:200px;height:200px;" id="myChart">
+   </canvas-->
+
+
+   <ion-slides *ngIf="ok">
+      <ion-slide   *ngFor="let res of preguntas ; let j = index"   >
+  
+              <ion-card style="opacity: 0.9">
+                <ion-card-header>
+                    {{res.question}}
+                </ion-card-header>
+                <ion-card-content>
+                    <div style="display: block">
+                        <canvas baseChart
+                                    [data]="doughnutChartData[j]"
+                                    [labels]="doughnutChartLabels[j]"
+                                    [chartType]="doughnutChartType"
+                                    (chartHover)="chartHovered($event)"
+                                    (chartClick)="chartClicked($event)"></canvas>
+                      </div>
+                </ion-card-content>
+              </ion-card>
+  
+      
+  
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+  <!--ion-fab left bottom>
+      <button ion-fab color="dark" (click)="presentActionSheet()"><ion-icon ios="ios-menu" md="md-menu"></ion-icon></button>
+  </ion-fab-->

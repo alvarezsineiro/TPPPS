@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar class="navbarcolor">
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-image">
+    <div class="form_wrapper animated slideInLeft">
+        <h3>Cargar Listado
+        </h3>
+        <label class="label2" >Elija la materia</label>
+        <select [(ngModel)]="opcion" (ngModelChange)='f()'>
+            <option value="PPS">PPS</option>
+            <option value="LAB4">LAB4</option>
+        </select>
+        <br>
+        <label class="label2">Elija el curso</label>
+        <select [(ngModel)]="opcion1" (ngModelChange)='g()'>
+            <option value="4A">4A</option>
+            <option value="4B">4B</option>
+        </select>
+        <br>
+    </div>
+
+    <div [hidden]="mostrar">
+        <div [hidden]="mostrar1" class="animated bounceInRight form_wrapper down bottom">
+        <input id="file" type="file" (change)="handleUpload($event)">
+        <button ion-button (click)="readCsvData()">leer csv</button>
+        <!--button ion-button (click)='downloadCSV({ filename: "stock-data.csv" });'>Descargar CSV</button-->
+
+        <!-- <thead>
+            <th>Legajo</th>
+            <th>e-mail</th>
+            <th>Usuario</th>
+            <th>ID</th>
+            <th>Borrar</th>
+        </thead>
+        <tbody *ngFor="let item of cant">
+            <td *ngIf="item.actividad == 'activo'">
+                {{item.legajo}}
+            </td>
+            <td *ngIf="item.actividad == 'activo'">
+                {{item.email}}
+            </td>
+            <td *ngIf="item.actividad == 'activo'">
+                {{item.usuario}}
+            </td>
+            <td *ngIf="item.actividad == 'activo'">
+                {{item.id}}
+            </td>
+            <td *ngIf="item.actividad == 'activo'">
+                <button ion-button danger (click)="delete(item.id)">borrar</button>
+            </td>
+
+        </tbody>-->
+         </div>
+    </div>
+
+</ion-content>

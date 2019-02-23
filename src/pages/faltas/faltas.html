@@ -1,0 +1,41 @@
+<!--
+  Generated template for the FaltasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="navbarcolor">
+    <ion-title>Faltas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg-image" padding>
+    <ion-slides>
+        <ion-slide  *ngFor="let res of barChartData ; let m = index" >
+    
+                <ion-card style="opacity: 0.9">
+                  <ion-card-header>
+                      {{barChartLabels[m]}}
+                  </ion-card-header>
+                  <ion-card-content>
+                    <div style="display: block">
+                      <canvas baseChart
+                              [datasets]="barChartData[m]"
+                              [labels]=""
+                              [options]="barChartOptions"
+                              [legend]="barChartLegend"
+                              [chartType]="barChartType"
+                              (chartHover)="chartHovered($event)"
+                              (chartClick)="chartClicked($event)"></canvas>
+                    </div>
+                  </ion-card-content>
+                </ion-card>
+     
+        </ion-slide>
+      </ion-slides>
+
+</ion-content>

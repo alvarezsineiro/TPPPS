@@ -1,0 +1,78 @@
+page-home {
+    .botones {
+        background-image: url("../assets/imgs/bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .imgbtn {
+        background-image: url("../assets/imgs/asist.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+    .imgbtn2 {
+        background-image: url("../assets/imgs/enc.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+    .imgbtn3 {
+        background-image: url("../assets/imgs/est.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+    .imgbtn4 {
+        background-image: url("../assets/imgs/alta.png");
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+    .imgbtn5 {
+        background-image: url("../assets/imgs/alum.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+    .imgbtn6 {
+        background-image: url("../assets/imgs/adm.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+    .imgbtn7 {
+        background-image: url("../assets/imgs/arch.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(12, 27, 196);
+        font-size: 32px;
+        font-family: 'Segoe UI';
+    }
+}

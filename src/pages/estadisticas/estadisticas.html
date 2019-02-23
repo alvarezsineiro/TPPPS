@@ -1,0 +1,54 @@
+<!--
+  Generated template for the EstadisticasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar class="navbarcolor">
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-image" padding>
+    <div class="form_wrapper animated slideInUp">
+
+
+
+        <div class="bottom" *ngFor="let item of Encuesta">
+            <button (click)="navegar(item)">{{item}}</button>
+        </div>
+        <div *ngFor="let p of preguntas">
+            <label class="label3">Pregunta: "{{p}}"</label>
+            <div *ngIf="tipo == 'P'">
+                <div *ngFor="let i of ListaRespuestas">
+                    <!--<label> {{i.respuesta}} {{i.cantidad}} </label>-->
+                    <label> {{i}}</label>
+                </div>
+            </div>
+            <div *ngIf="tipo != 'P'">
+                <canvas id="myChart">
+                     </canvas>
+
+            </div>
+        </div>
+
+    </div>
+    <!--ion-footer >
+        <ion-toolbar color="dark">
+          <ion-grid>
+            <ion-row>
+              <ion-col style="text-align: center"-->
+                  <br>
+                  <br>
+                  <div style="text-align: center">
+                <button ion-button round  (click)="buscarinfo()" outline class="botonqr">Escanear Código QR</button>
+            </div>
+              <!--/ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-toolbar>
+    </ion-footer-->
+</ion-content>

@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar class="navbarcolor">
+
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="bg-image">
+
+    <div class="form_wrapper animated slideInLeft">
+        <h3>Tomar lista</h3>
+
+        <div>
+            <label class="label2">Elija la materia</label>
+
+
+            <select [(ngModel)]="opcion" (change)='f()'>
+                <option value="PPS">PPS</option>
+                <option value="LAB4">LAB4</option>
+            </select>
+
+
+            <div [hidden]="mostrar">
+                <label class="label2">Elija el curso</label>
+                <select [(ngModel)]="opcion1" (change)='g()'>
+                <option value="4A">4A</option>
+                <option value="4B">4B</option>
+            </select>
+            </div>
+            <br>
+            <div class="animated bounceIn" [hidden]="mostrar1">
+
+                <button (click)='tomarFoto()'> <ion-icon name="camera"></ion-icon> | Foto aula</button>
+                <div>
+                    <img src="{{storage}}" alt="">
+                </div>
+
+            </div>
+
+
+
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class="animated slideInLeft left" [hidden]="mostrar1">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Asistió</th>
+                    <th>Legajo</th>
+                    <th>Alumno</th>
+
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of cant">
+                <tr *ngIf="item.tipo == 'alumno'">
+                    <td *ngIf="item.actividad == 'activo'">
+                        <ion-toggle color="secondary" [(ngModel)]="item.vino"></ion-toggle>
+                    </td>
+                    <td *ngIf="item.actividad == 'activo'">
+                        {{item.legajo}}
+                    </td>
+                    <td *ngIf="item.actividad == 'activo'" size="2">
+                        {{item.usuario}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bottom">
+        <button ion-button (click)="guardar()" [disabled]="tomar"> Guardar Datos </button>
+        <ion-item color="primary">
+        <ion-label class="label2">Tipo de descarga</ion-label>
+        
+        <ion-select [(ngModel)]="descarga" >
+            <ion-option value="pdf">pdf</ion-option>
+            <ion-option value="csv">excel</ion-option>
+          </ion-select>
+        
+    </ion-item>
+        <button ion-button (click)="selector(descarga)" [disabled]="tomar"> Descargar listado </button>
+    </div>
+    </div>
+
+
+</ion-content>

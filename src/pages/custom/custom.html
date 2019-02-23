@@ -1,0 +1,129 @@
+<!--
+  Generated template for the CustomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>custom</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-image">
+
+  <div id="form_wrapper" class="form_wrapper animated bounceInRight">
+
+    <form class="login active">
+      <h3>Elija la configuración deseada</h3>
+
+      
+            <label underline>Color del Fondo:</label>
+         
+        
+            <ion-input type="color" style="width: 100%;height: 100;" #c (change)="fondo(c.value)"></ion-input>
+     
+      
+            <label underline>Color del Fondo de formularios:</label>
+       
+            <ion-input type="color" style="width: 100%;height: 100;" #a (change)="fondoform(a.value)"></ion-input>
+  
+
+   
+            <label underline>Color borde de formularios:</label>
+     
+            <ion-input type="color" style="width: 100%;height: 100;" #b (change)="bordeform(b.value)"></ion-input>
+    
+    
+            <label underline>Color texto de formularios:</label>
+     
+            <ion-input type="color" style="width: 100%;height: 100;" #d (change)="textoform(d.value)"></ion-input>
+     
+
+  
+            <label underline>Color fondo de botones:</label>
+         
+            <ion-input type="color" style="width: 100%;height: 100;" #e (change)="fondoboton(e.value)"></ion-input>
+        
+     
+            <label underline>Color borde de botones:</label>
+         
+            <ion-input type="color" style="width: 100%;height: 100;" #f (change)="bordeboton(f.value)"></ion-input>
+       
+     
+            <label underline>Color texto de botones:</label>
+        
+            <ion-input type="color" style="width: 100%;height: 100;" #g (change)="textoboton(g.value)"></ion-input>
+        
+
+      
+
+     
+            <label underline>Color fondo de tabla:</label>
+         
+            <ion-input type="color" style="width: 100%;height: 100;" #h (change)="fondotabla(h.value)"></ion-input>
+      
+
+            <label underline>Color texto de tabla:</label>
+         
+            <ion-input type="color" style="width: 100%;height: 100;" #i (change)="textotabla(i.value)"></ion-input>
+    
+            <label underline>Color bordes de tabla:</label>
+        
+            <ion-input type="color" style="width: 100%;height: 100;" #j (change)="bordetabla(j.value)"></ion-input>
+       
+      
+            <label underline>Color barra de navegación:</label>
+        
+            <ion-input type="color" style="width: 100%;height: 100;" #k (change)="fondobarra(k.value)"></ion-input>
+        
+     
+            <label underline>Color texto de barra de navegación:</label>
+         
+            <ion-input type="color" style="width: 100%;height: 100;" #l (change)="textobarra(l.value)"></ion-input>
+        
+
+     
+              <label underline>Formato de los botones:</label>
+           
+                <select #z (change)="formatobotones(z.value)">
+                    <option value="0px">Normal</option>
+                    <option value="20px">Esquinas redondeadas</option>
+                    <option value="50%">Redondos</option>
+                    
+                </select>
+           
+
+        <!--ion-grid>
+            <ion-row>
+              <ion-col style="text-align: right">
+                <label underline>Formato de texto:</label>
+              </ion-col>
+              <ion-col style="text-align: left">
+                  <select #x (change)="formatotexto(x.value)">
+                      <option value="">Cabin</option>
+                      <option value="'Indie Flower'">Indie Flower</option>
+                      <option value="Coiny">Coiny</option>
+                      <option value="Pacifico">Pacifico</option>
+                      <option value="Shadows Into Light">Shadows Into Light</option>
+                      
+                  </select>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+
+      <div class="bottom" style="text-align: center">
+
+        <button ion-button (click)="changeprimary()" style="width: 50%;">Guardar</button>
+
+        <br>
+      </div-->
+    </form>
+
+  </div>
+
+</ion-content>

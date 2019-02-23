@@ -1,0 +1,60 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header >
+
+    <ion-navbar  >
+
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content class="bg-image">
+
+        <ion-fab top right>
+                <button ion-fab class="botonmenu">  <ion-icon name="menu"></ion-icon></button>
+                <ion-fab-list side="bottom">
+                    <button ion-fab class="botonmenu" (click)="argentina()">  <ion-icon name="flag"></ion-icon></button>
+                    <button ion-fab class="botonmenu" (click)="profesional()">  <ion-icon name="briefcase"></ion-icon></button>
+                    <button ion-fab class="botonmenu" (click)="naif()">  <ion-icon name="star"></ion-icon></button>
+                    <button ion-fab class="botonmenu" (click)="ruteo()">  <ion-icon name="brush"></ion-icon></button>
+                </ion-fab-list>
+            </ion-fab>
+    <div id="form_wrapper" class="form_wrapper animated bounceInRight">
+            
+
+        <form class="login active">
+            <h3>Iniciar Sesión</h3>
+
+            <div >
+                <label>   <ion-icon name="mail"></ion-icon> | Correo:</label>
+                <input type="text" [(ngModel)]="email" name="mail" />
+            </div>
+            <div>
+                <label>   <ion-icon name="lock"></ion-icon> | Contraseña:                 
+                </label>
+                <input type="password" [(ngModel)]="pw" name="pw" />
+            </div>
+            <div class="bottom">
+
+                <button ion-button (click)="login()">  <ion-icon name="contact"></ion-icon>  |  Iniciar sesión</button>
+                <button ion-button (click)="google()"> <ion-icon name="logo-googleplus"></ion-icon>  |  Google</button>
+                <button ion-button (click)="facebookLogin()"> <ion-icon name="logo-facebook"></ion-icon>  |  Facebook</button>
+                <!--button ion-button (click)="rapido()">  <ion-icon name="contact"></ion-icon>  |  Inicio rápido</button-->
+                <select #c (change)="cargar(c.value)">
+                    <option value="admin@admin.com">administrador</option>
+                    <option value="pepegrillo@gmail.com">profesor</option>
+                    <option value="elpollo@gmail.com">alumno</option>
+                    <option value="nataniel@gmail.com">administrativo</option>
+                </select>
+                <div class="clear"></div>
+                <br>
+            </div>
+        </form>
+         
+    </div>
+</ion-content>

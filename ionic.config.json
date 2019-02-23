@@ -1,0 +1,8 @@
+{
+    "name": "ppsTp",
+    "app_id": "ppsTp",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    }
+}

@@ -1,0 +1,150 @@
+<!--
+  Generated template for the EncuestasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>encuestas</ion-title>
+    </ion-navbar>
+    <ion-fab top right>
+        <button ion-fab color="light">  <ion-icon name="menu"></ion-icon></button>
+        <ion-fab-list side="bottom">
+            <button ion-fab color="primary">  <ion-icon name="contact"></ion-icon></button>
+            <button ion-fab color="secondary">QR</button>
+
+        </ion-fab-list>
+    </ion-fab>
+</ion-header>
+
+
+<ion-content padding class="bg-image">
+
+</ion-content>-->
+<!--
+  Generated template for the EstadisticaEncuestaPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar class="navbarcolor">
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-image" padding>
+    <div class="form_wrapper animated bounceInLeft" [hidden]="modificarEncuesta">
+
+        <h3>Crear Encuesta</h3>
+        <div>
+            <button ion-button (click)="modificar()" color="encuestas" full>Modificar/borrar encuesta</button>
+        </div>
+        <div [hidden]="mostrar">
+            <label class="label3">Materia</label>
+            <select [(ngModel)]="materia" (change)='f()'>
+                <option value="PPS">PPS</option>
+                <option value="LAB4">LAB4</option>
+            </select>
+
+
+            <div class="animated bounceInLeft" [hidden]="cursar">
+
+                <label class="label3">Elija el curso</label>
+                <select [(ngModel)]="curso" (change)="g()">
+                    <option value="4A">4A</option>
+                    <option value="4B">4B</option>
+                </select>
+
+            </div>
+
+            <br>
+        </div>
+
+        <div [hidden]="datos">
+
+
+
+            <div>
+                <label class="label3">Nombre de la encuesta</label>
+                <ion-input type="text" [(ngModel)]="nombre" required></ion-input>
+            </div>
+            <div>
+
+                <label class="label3">Cantidad de horas</label>
+                <ion-input type="number" [(ngModel)]="horas" required></ion-input>
+            </div>
+
+            <div>
+
+                <label class="label3">Formato</label>
+                <select [(ngModel)]="formato" (change)="lock()" [disabled]="des">
+                    <option value="U">Con opciones</option>
+                    <option value="P">Respuesta propia</option>
+                </select>
+
+            </div>
+
+
+            <div *ngIf="formato=='U'" class="animated bounceInLeft">
+                <label class="label3">Cantidad de Respuestas</label>
+                <select [(ngModel)]="cantidad" interface="popover" (ionChange)="mychange($event)">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div>
+                <label class="label3"> Pregunta</label>
+                <ion-input type="text" [(ngModel)]="question" required></ion-input>
+            </div>
+            <br>
+            <div *ngFor="let item of cant" class="animated bounceInLeft">
+
+                <div *ngIf="item<=cantidad && formato=='U' " style="padding-top:0px;padding-bottom:0px;">
+                    <label class="label3">Respuestas</label>
+                    <ion-input type="text" placeholder="Respuesta {{item}}" [(ngModel)]=option[item] required></ion-input>
+
+                </div>
+            </div>
+            <div [hidden]="boton" class="bottom">
+                <button ion-button (click)="AgregarQuestion()" color="encuestas" [disabled]="question==null ||  question==''" full>Agregar pregunta</button>
+                <button ion-button (click)="SubirQuestion()" color="encuestas" full [disabled]="encuesta.length == 0 || horas == null || horas <= 0 ||  nombre == ''">Subir cuestionario</button>
+            </div>
+        </div>
+        <div [hidden]="otra">
+            <label class="label3">Encuesta creada</label>
+            <div class="bottom">
+                <button ion-button (click)="otraE()" color="encuestas" full>Realizar otra?</button>
+            </div>
+
+        </div>
+    </div>
+    <div div class="form_wrapper animated bounceInLeft" [hidden]="!modificarEncuesta">
+        <div class="form_wrapper animated slideInUp">
+            <div [hidden]="cambiarEncuesta">
+                <h3>lista de encuestas</h3>
+                <div *ngFor="let item of nombres">
+                    <div *ngIf="item != ''">
+                      <button (click)="cambiar(item)">{{item}}</button>
+                    </div>
+                </div>
+            </div>
+            <div [hidden]="!cambiarEncuesta">
+                <div [hidden]="cambiarPregunta">
+                    <div *ngFor="let p of preguntas">
+                        <button (click)="cambiarPreg(p)">{{p}}</button>
+                    </div>
+                    <div>
+                        <button (click)="borrarEnc()">Borrar Encuesta</button>
+                    </div>
+                </div>
+                <div [hidden]="!cambiarPregunta">
+                    <input type="text" [(ngModel)]="pregunta">
+                    <button (click)="guardarCambioPreg(p)">guardar cambio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

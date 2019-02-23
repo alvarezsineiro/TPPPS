@@ -1,0 +1,94 @@
+<!--
+  Generated template for the AlumnosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar class="navbarcolor">
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg-image">
+    <div class="form_wrapper animated slideInLeft" [hidden]="mostrar">
+
+        <div>
+            <label class="label2">Elija el método</label>
+
+
+            <select [(ngModel)]="opcion" (ngModelChange)='f()'>
+                <option value="uno">Cargar 1</option>
+                <option value="var">Cargar Listado</option>
+            </select>
+
+
+
+
+
+            <br>
+        </div>
+
+        <div [hidden]="uno" style="height:70%">
+
+            <form class="login active">
+
+                <div>
+                    <label>
+                        <ion-icon name="mail"></ion-icon> | Legajo:</label>
+                    <!--input [(ngModel)]="numero" type="text" name="mail" /-->
+                    <ion-input [(ngModel)]="numero" type="number" pattern="[0-9]*" name="mail"  ></ion-input>
+                </div>
+                <div>
+                    <label>
+                        <ion-icon name="mail"></ion-icon> | Nombre:</label>
+                    <input [(ngModel)]="nombre" type="text" name="text" />
+                </div>
+                <div>
+                    <label>
+                        <ion-icon name="mail"></ion-icon> | Apellido:</label>
+                    <input [(ngModel)]="apellido" type="text" name="text" />
+                </div>
+                <div class="bottom">
+                    <button ion-button (click)="enviar()">
+                        <ion-icon name="contact"></ion-icon> | Agregar </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div [hidden]="varios" class="animated bounceInRight form_wrapper  bottom">
+
+
+
+
+        <input id="file" type="file" (change)="handleUpload($event)">
+        <button ion-button (click)="readCsvData()">leer csv</button>
+        <!--button ion-button (click)='downloadCSV({ filename: "stock-data.csv" });'>Descargar CSV</button-->
+    </div>
+    <br>
+    <div class="table">
+        <thead>
+            <th>Legajo</th>
+            <th>Usuario</th>
+            <th>Borrar</th>
+        </thead>
+        <tbody *ngFor="let item of cant">
+            <tr *ngIf="item.tipo == 'alumno'">
+                <td *ngIf="item.actividad == 'activo'">
+                    {{item.legajo}}
+                </td>
+                <td *ngIf="item.actividad == 'activo'">
+                    {{item.usuario}}
+                </td>
+                <td *ngIf="item.actividad == 'activo'">
+                    <button ion-button danger (click)="delete(item.id)" class="botonlista"><ion-icon name="trash"></ion-icon></button>
+                </td>
+            </tr>
+        </tbody>
+    </div>
+</ion-content>
