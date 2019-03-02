@@ -34,6 +34,9 @@ export class ThemeProvider {
     this.document.documentElement.style.setProperty(name, value,"important");
     
   }
+  getVariable(name){
+    return this.document.documentElement.style.getPropertyValue(name);
+  }
 
   private setGlobalCSS(css: string) {
     this.document.documentElement.style.cssText = css;

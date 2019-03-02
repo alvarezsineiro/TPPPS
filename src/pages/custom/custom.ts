@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the CustomPage page.
  *
@@ -36,6 +37,8 @@ const themes = {
     dark: '#34162A'
   }
 };
+
+
 @IonicPage()
 @Component({
   selector: 'page-custom',
@@ -43,6 +46,36 @@ const themes = {
 })
 export class CustomPage {
   selectedTheme: String;
+  a:any;
+  b:any;
+  c:any;
+  d:any;
+  e:any;
+  f:any;
+  g:any;
+  h:any;
+  i:any;
+  j:any;
+  k:any;
+  l:any;
+  z:any;
+
+  /*tema:{
+    fondo:string,
+    fondoform:string,
+    bordeform:string,
+    textoform:string,
+    fondoboton:string,
+    bordeboton:string,
+    textoboton:string,
+    fondotabla:string,
+    textotabla:string,
+    bordetabla:string,
+    fondobarra:string,
+    textobarra:string,
+    formatobotones:string
+  }*/
+  tema=["","","","","","","","","","","","",""];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private settings: SettingsProvider
     ,private theme: ThemeProvider) {
@@ -51,6 +84,12 @@ export class CustomPage {
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
     this.settings.setActiveTheme('custom-theme');
 
+    
+      this.theme.setVariable("--ion-color-dark","#ce3232");
+      this.theme.setVariable("--ion-color-alerte","#ce3232");
+      
+  
+      this.cargar();
   }
 
   ionViewDidLoad() {
@@ -61,63 +100,148 @@ export class CustomPage {
     this.theme.setVariable("--ion-color-primary","#fff");
     
   }
-  fondo(valor){
+  fondo(){
+    let valor=this.c;
     console.log("sada");
     this.theme.setVariable("--ion-color-primary",valor);
   }
-  fondoform(valor){
+  fondoform(){
+    let valor=this.a;
     console.log(valor);
     this.theme.setVariable("--ion-color-secondary",valor);
   }
-  bordeform(valor){
-    console.log("sada");
+  bordeform(){
+    let valor=this.b;
+    console.log(valor);
     this.theme.setVariable("--ion-color-tertiary",valor);
   }
-  textoform(valor){
-    console.log("sada");
+  textoform(){
+    let valor=this.d;
+    console.log(valor);
     this.theme.setVariable("--ion-color-cuatro",valor);
   }
-  fondoboton(valor){
-    console.log("sada");
+  fondoboton(){
+    let valor=this.e;
+    console.log(valor);
     this.theme.setVariable("--ion-color-cinco",valor);
   }
-  bordeboton(valor){
-    console.log("sada");
+  bordeboton(){
+    let valor=this.f;
+    console.log(valor);
     this.theme.setVariable("--ion-color-seis",valor);
   }
-  textoboton(valor){
-    console.log("sada");
+  textoboton(){
+    let valor=this.g;
+    console.log(valor);
     this.theme.setVariable("--ion-color-siete",valor);
   }
-  fondotabla(valor){
-    console.log("sada");
+  fondotabla(){
+    let valor=this.h;
+    console.log(valor);
     this.theme.setVariable("--ion-color-ocho",valor);
   }
-  textotabla(valor){
-    console.log("sada");
+  textotabla(){
+    let valor=this.i;
+    console.log(valor);
     this.theme.setVariable("--ion-color-nueve",valor);
   }
-  bordetabla(valor){
-    console.log("sada");
+  bordetabla(){
+    let valor=this.j;
+    console.log(valor);
     this.theme.setVariable("--ion-color-diez",valor);
   }
 
-  fondobarra(valor){
-    console.log("sada");
+  fondobarra(){
+    let valor=this.k;
+    console.log(valor);
     this.theme.setVariable("--ion-color-once",valor);
   }
-  textobarra(valor){
-    console.log("sada");
+  textobarra(){
+    let valor=this.l;
+    console.log(valor);
     this.theme.setVariable("--ion-color-doce",valor);
   }
 
-  formatobotones(valor){
-    console.log("sada");
+  formatobotones(){
+    let valor=this.z;
+    console.log(valor);
     this.theme.setVariable("--ion-border-radius-tres",valor);
   }
   formatotexto(valor){
-    console.log("sada");
-    this.theme.setVariable("font-family",valor);
+    console.log(valor);
+    this.theme.setVariable("font-family-mio",valor);
   }
-  
+  cargar()
+  {
+    let temasting = localStorage.getItem("tema");
+    console.log(temasting);
+    
+    if (temasting!=null) {
+      let tema = JSON.parse(temasting);
+      this.a=tema[0];
+      this.b=tema[1];
+      this.c=tema[2];
+      this.d=tema[3];
+      this.e=tema[4];
+      this.f=tema[5];
+      this.g=tema[6];
+      this.h=tema[7];
+      this.i=tema[8];
+      this.j=tema[9];
+      this.k=tema[10];
+      this.l=tema[11];
+      this.z=tema[12];
+    }
+    else
+    {
+      this.a="#32b9db";
+      this.b="#fda62d";
+      this.c="#51f1f1";
+      this.d="#d042f4";
+      this.e="#80b33e";
+      this.f="#426bf4";
+      this.g="#fa3a3a";
+      this.h="#ed75f1";
+      this.i="#000000";
+      this.j="#000000";
+      this.k="#f4ca42";
+      this.l="#222";
+      this.z="0px";
+    }
+    
+    this.fondo();
+    this.fondoform();
+    this.bordeform();
+    this.textoform();
+    this.fondoboton();
+    this.bordeboton();
+    this.textoboton();
+    this.fondotabla();
+    this.textotabla();
+    this.bordetabla();
+    this.fondobarra();
+    this.textobarra();
+    this.formatobotones();
+  }
+
+  guardar()
+  {
+    this.tema[0]=this.a;
+    this.tema[1]=this.b;
+    this.tema[2]=this.c;
+    this.tema[3]=this.d;
+    this.tema[4]=this.e;
+    this.tema[5]=this.f;
+    this.tema[6]=this.g;
+    this.tema[7]=this.h;
+    this.tema[8]=this.i;
+    this.tema[9]= this.j;
+    this.tema[10]=this.k;
+    this.tema[11]=this.l;
+    this.tema[12]=this.z;
+
+    localStorage.setItem("tema",JSON.stringify(this.tema));
+    console.log(this.a);
+    this.navCtrl.pop();
+  }
 }

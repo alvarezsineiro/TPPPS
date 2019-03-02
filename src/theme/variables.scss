@@ -97,7 +97,8 @@ $app-direction: ltr;
 
   
   /** primary **/
-  --ion-color-primary: rgb(157, 250, 222);
+  --ion-color-primary: #51f1f1;
+  
 
   /** secondary **/
   --ion-color-secondary: #32b9db;
@@ -142,7 +143,14 @@ $app-direction: ltr;
   /** dark **/
   --ion-color-dark: #222;
   
-
+  --ion-color-alerte:#fff;
 
   
 }
+
+.toast-container{
+  background-color: var(--ion-color-dark);
+  }
+
+  $alert-md-background-color:var(--ion-color-alerte);
+  $alert-md-message-text-color:#fff;

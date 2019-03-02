@@ -269,10 +269,14 @@ verificarPrivilegio(email : string)
 argentina()
 {
   this.settings.setActiveTheme('argentina-theme');
+  this.theme.setVariable("--ion-color-dark","#4bafdd");
 }
 naif()
 {
   this.settings.setActiveTheme('naif-theme');
+  this.theme.setVariable("--ion-color-dark","#ffce00");
+  this.theme.setVariable("--ion-color-alerte","#ffce00");
+  this.theme.setVariable("--ion-color-alerte","#4bafdd");
 }
 custom()
 {
@@ -281,6 +285,8 @@ custom()
 profesional()
 {
   this.settings.setActiveTheme('profesional-theme');
+  this.theme.setVariable("--ion-color-dark","#222");
+  this.theme.setVariable("--ion-color-alerte","#fff");
 }
 
 

@@ -21,80 +21,224 @@
       <h3>Elija la configuración deseada</h3>
 
       
-            <label underline>Color del Fondo:</label>
-         
-        
-            <ion-input type="color" style="width: 100%;height: 100;" #c (change)="fondo(c.value)"></ion-input>
-     
-      
-            <label underline>Color del Fondo de formularios:</label>
-       
-            <ion-input type="color" style="width: 100%;height: 100;" #a (change)="fondoform(a.value)"></ion-input>
+      <ion-grid>
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color del Fondo:</h6>
+            <div style="text-align: center">
+            <input type="color" style="width: 80%;height: 100;" [(ngModel)]="c" (change)="fondo()" name="fondo">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color del Fondo de formularios:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="a" (change)="fondoform()" name="fondoform">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color borde de formularios:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;"  [(ngModel)]="b" (change)="bordeform()"  name="bordeform">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color texto de formularios:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="d" (change)="textoform()"  name="textoform">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color fondo de botones:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="e" (change)="fondoboton()"  name="fondoboton">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color borde de botones:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="f" (change)="bordeboton()"  name="bordeboton">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color texto de botones:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="g" (change)="textoboton()"  name="textoboton">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color fondo de tabla:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="h" (change)="fondotabla()" name="fondotabla">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+
+
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color texto de tabla:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="i" (change)="textotabla()"  name="textotabla">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color bordes de tabla:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="j" (change)="bordetabla()"  name="bordetabla">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color barra de navegación:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="k" (change)="fondobarra()"  name="fondobarra">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <h6 underline>Color texto de barra de navegación:</h6>
+            <div style="text-align: center">
+              <input type="color" style="width: 80%;height: 100;" [(ngModel)]="l" (change)="textobarra()"  name="textobarra">
+          </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col >
+            <hr>
+          </ion-col>
+        </ion-row>
   
 
-   
-            <label underline>Color borde de formularios:</label>
-     
-            <ion-input type="color" style="width: 100%;height: 100;" #b (change)="bordeform(b.value)"></ion-input>
-    
-    
-            <label underline>Color texto de formularios:</label>
-     
-            <ion-input type="color" style="width: 100%;height: 100;" #d (change)="textoform(d.value)"></ion-input>
-     
-
-  
-            <label underline>Color fondo de botones:</label>
-         
-            <ion-input type="color" style="width: 100%;height: 100;" #e (change)="fondoboton(e.value)"></ion-input>
-        
-     
-            <label underline>Color borde de botones:</label>
-         
-            <ion-input type="color" style="width: 100%;height: 100;" #f (change)="bordeboton(f.value)"></ion-input>
-       
-     
-            <label underline>Color texto de botones:</label>
-        
-            <ion-input type="color" style="width: 100%;height: 100;" #g (change)="textoboton(g.value)"></ion-input>
-        
+        <ion-row >
+          <ion-col >
+            <h6 underline>Formato de los botones:</h6>
+            <div style="text-align: center">
+              <select [(ngModel)]="z" (change)="formatobotones()" style="width: 80%;height: 100;"  name="formatobotones">
+                <option value="0px">Normal</option>
+                <option value="20px">Esquinas redondeadas</option>
+                <option value="50%">Redondos</option>
+                
+            </select>
+          </div>
+          </ion-col>
+        </ion-row>
 
       
 
-     
-            <label underline>Color fondo de tabla:</label>
-         
-            <ion-input type="color" style="width: 100%;height: 100;" #h (change)="fondotabla(h.value)"></ion-input>
-      
 
-            <label underline>Color texto de tabla:</label>
-         
-            <ion-input type="color" style="width: 100%;height: 100;" #i (change)="textotabla(i.value)"></ion-input>
-    
-            <label underline>Color bordes de tabla:</label>
-        
-            <ion-input type="color" style="width: 100%;height: 100;" #j (change)="bordetabla(j.value)"></ion-input>
-       
-      
-            <label underline>Color barra de navegación:</label>
-        
-            <ion-input type="color" style="width: 100%;height: 100;" #k (change)="fondobarra(k.value)"></ion-input>
-        
-     
-            <label underline>Color texto de barra de navegación:</label>
-         
-            <ion-input type="color" style="width: 100%;height: 100;" #l (change)="textobarra(l.value)"></ion-input>
-        
+        </ion-grid>  
 
-     
-              <label underline>Formato de los botones:</label>
+          
+
+        
            
-                <select #z (change)="formatobotones(z.value)">
-                    <option value="0px">Normal</option>
-                    <option value="20px">Esquinas redondeadas</option>
-                    <option value="50%">Redondos</option>
-                    
-                </select>
+     
+              
+           
+               
            
 
         <!--ion-grid>
@@ -105,23 +249,23 @@
               <ion-col style="text-align: left">
                   <select #x (change)="formatotexto(x.value)">
                       <option value="">Cabin</option>
-                      <option value="'Indie Flower'">Indie Flower</option>
-                      <option value="Coiny">Coiny</option>
-                      <option value="Pacifico">Pacifico</option>
-                      <option value="Shadows Into Light">Shadows Into Light</option>
+                      <option value="cursive">Indie Flower</option>
+                      <option value="Haettenschweiler">Coiny</option>
+                      <option value="Arial Narrow Bold">Pacifico</option>
+                      <option value="sans-serif">Shadows Into Light</option>
                       
                   </select>
               </ion-col>
             </ion-row>
-          </ion-grid>
+          </ion-grid-->
 
 
       <div class="bottom" style="text-align: center">
 
-        <button ion-button (click)="changeprimary()" style="width: 50%;">Guardar</button>
+        <button ion-button (click)="guardar()" style="width: 50%;">Guardar</button>
 
         <br>
-      </div-->
+      </div>
     </form>
 
   </div>
